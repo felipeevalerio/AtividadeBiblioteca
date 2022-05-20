@@ -1,5 +1,16 @@
 import java.time.LocalDateTime;
 
+/*
+    Duvidas para 20/05/2022{
+        ->Serializable para que server realmente?
+        ->Os arquvios bin devem ficar assim?
+        ->Eu devo alterar o objeto gravado apos extender o prazo de emprestimo?
+        ->Criação das classes está ok?
+        ->Eu devo criar classes Exceptions ou apenas usar as ja existentes?
+    }
+
+*/
+
 public class Aplicacao {
     public static void main(String []args){
         try{
@@ -38,8 +49,10 @@ public class Aplicacao {
 
             emprestimoTeste.exibirEmprestimo();
 
+            emprestimoTeste.salvarEmprestimo();
 
-            System.out.println("\n==================================================");
+            System.out.println("==================================================");
+
 
             System.out.println("ATUALIZANDO DATA DE EMPRESTIMO!");
 
