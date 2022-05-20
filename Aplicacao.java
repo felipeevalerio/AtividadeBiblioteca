@@ -43,7 +43,7 @@ public class Aplicacao {
             livrosDesejados[0] = b.livros[2];
             livrosDesejados[1] = b.livros[1];
 
-            b.cadastrarEmprestimo(b.clientes[1],livrosDesejados);  //Demonstrando o registro do emprestimo de 2 livros associado a 1 prazo e um cliente
+            b.cadastrarEmprestimo(b.clientes[0],livrosDesejados);  //Demonstrando o registro do emprestimo de 2 livros associado a 1 prazo e um cliente
 
             Emprestimo emprestimoTeste = b.emprestimos[0];
 
@@ -63,8 +63,25 @@ public class Aplicacao {
             System.out.println("Emprestimo Atualizado: ");
 
             emprestimoTeste.exibirEmprestimo(); 
-            
-            
+
+
+            System.out.println("===========================");
+
+            emprestimoTeste.lerEmprestimo(); //Demonstrando a leitura dos emprestimos binarios
+
+            System.out.println("===========================");
+
+            for(int i = 0; i < b.quantidadeClientes; i++){//Demonstrando a leitura dos clientes binarios
+                Cliente clienteTeste =  (Cliente) b.clientes[i];
+
+                clienteTeste.lerCliente();
+            }
+
+            System.out.println("===========================");
+
+            for(int i = 0; i < b.quantidadeLivros; i++){//Demonstrando a leitura dos livros binarios
+                b.livros[i].exibirLivro();
+            }
 
         }catch(Exception e){
 

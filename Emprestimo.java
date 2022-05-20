@@ -1,5 +1,7 @@
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
@@ -68,4 +70,21 @@ public class Emprestimo implements Serializable{
         out.close();
     }
 
+    public void lerEmprestimo() {
+        try {
+            FileInputStream file = new FileInputStream("./ArquviosBin/EmprestimosSalvos.bin");
+            ObjectInputStream in = new ObjectInputStream(file);
+            Emprestimo emprestimoLido = (Emprestimo) in.readObject();
+            emprestimoLido.exibirEmprestimo();
+            in.close();
+        } 
+        catch(IOException e) {
+            System.err.println("Erro ao tentar ler o arquivo LivrosSalvos.bin");
+            e.printStackTrace();
+        }
+        catch(ClassNotFoundException e) {
+            System.err.println("Classe não foi encontrada");
+            e.printStackTrace();
+        }
+    }
 }
